@@ -128,8 +128,8 @@ ul {
   padding-bottom: 20px;
   padding-top: 20px;
 }
-.icon_hobbies {
-  display: flex;
+.icon_hobbie {
+  display: flex !important;
   gap: 15px;
   text-align: center;
 }
@@ -144,15 +144,18 @@ ul {
 .ic-strategy,
 .ic-hotairballoon,
 .ic-basket {
-  font-size: 20px;
-  padding: 20px;
-  padding-top: 20px;
+  display: flex !important;
+  font-size: 32px;
+  padding: 33px;
+  padding-top: 30px;
   width: 28px;
-  height: 22px;
+  height: 27px;
   color: #199cdb;
   border: 1px solid #199cdb;
   border-radius: 50%;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 .text_timeline {
   display: block;
@@ -236,6 +239,11 @@ ul {
 .project_in {
   border: 1px solid #dee2e6;
 }
+/* Thêm hiệu hứng cho link */
+.project_in:hover {
+  transform: translateY(-15px);
+  transition: transform 0.2 ease-in;
+}
 /* Phần cuối trang, thông tin tài khoản mạng xã hội */
 .icon-facebook-circled,
 .icon-linkedin,
@@ -249,44 +257,34 @@ ul {
   column-gap: 20px;
   justify-content: center;
   align-items: center;
+  animation: slideInFromBottom 1s ease-in;
+}
+.footer-effect {
+  display: flex;
+  align-items: center;
+}
+/* Thêm hiệu ứng cho link  */
+.footer-effect:hover {
+  transform: translateY(-5px);
+  transition: transform 0.2 ease-in;
 }
 a {
   text-decoration: none;
 }
 /* Phần nâng cao  */
 /* Đánh dấu mốc thời gian, sử dụng lớp giả  */
-.timeline {
+.timeline-1 {
   position: relative;
 }
-.timeline .row::before {
+.timeline-1 .row-1::before {
   position: absolute;
   content: "";
   width: 9px;
   height: 9px;
   background-color: #199cdb;
   border-radius: 50%;
-  left: 6px;
-  top: 100px;
-}
-.timeline .row2::before {
-  position: absolute;
-  content: "";
-  width: 9px;
-  height: 9px;
-  background-color: #199cdb;
-  border-radius: 50%;
-  left: 6px;
-  top: 223px;
-}
-.timeline .row3::before {
-  position: absolute;
-  content: "";
-  width: 9px;
-  height: 9px;
-  background-color: #199cdb;
-  border-radius: 50%;
-  left: 6px;
-  bottom: 105px;
+  left: -15px;
+  top: 8px;
 }
 /* Tạo thanh dòng thời gian  */
 /* .timeline::before {
@@ -299,3 +297,36 @@ a {
   background-color: black;
 } */
 
+/* Animations  */
+@keyframes slideInFromleft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
